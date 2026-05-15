@@ -19,7 +19,7 @@ app.add_middleware(
     "http://localhost:5174",
     "http://127.0.0.1:5174",
     "http://localhost:3000",
-    "https://graduation-project-elpis-ai-final-f.vercel.app"
+    "https://gp-frontend-gamma.vercel.app",
 
     ],
     allow_credentials=True,
