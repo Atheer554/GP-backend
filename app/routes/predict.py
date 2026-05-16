@@ -1,4 +1,4 @@
-from fastapi import Depends, APIRouter, UploadFile, File, HTTPException
+from fastapi import Depends, APIRouter, UploadFile, File, HTTPException, Form
 from sqlalchemy.orm import Session
 from app.database import get_db
 from app.models.analysis import Analysis
@@ -25,6 +25,7 @@ router = APIRouter()
 @router.post("/predict")
 async def predict(
     file: UploadFile = File(...),
+    patient_id: int = Form(...),
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
@@ -79,6 +80,7 @@ async def predict(
     # 9) حفظ النتيجة في قاعدة البيانات
     new_analysis = Analysis(
         user_id=current_user.id,
+        patient_id=patient_id,
         filename=file.filename,
         has_tumor=has_tumor,
         tumor_type=tumor_type,
@@ -111,13 +113,15 @@ async def predict(
     }
 
 
-@router.get("/history")
+@router.get("/history/{patient_id}")
 def get_history(
+    patient_id: int,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
     analyses = db.query(Analysis).filter(
-        Analysis.user_id == current_user.id
+        Analysis.user_id == current_user.id,
+        Analysis.patient_id == patient_id
     ).all()
 
     history = []
