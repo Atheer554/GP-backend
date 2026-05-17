@@ -23,6 +23,9 @@ app.add_middleware(
     "https://gp-frontend-git-feature-ef5217-atheeraladwan371-7653s-projects.vercel.app",
     "https://gp-frontend-git-feature-44801a-atheeraladwan371-7653s-projects.vercel.app",
     " http://localhost:5173/","https://gp-frontend-git-main-atheeraladwan371-7653s-projects.vercel.app",
+   " https://gp-frontend-38x80ic6j-atheeraladwan371-7653s-projects.vercel.app",
+
+  
     
 
     ],
