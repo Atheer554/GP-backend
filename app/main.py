@@ -20,6 +20,9 @@ app.add_middleware(
     "http://127.0.0.1:5174",
     "http://localhost:3000",
     "https://gp-frontend-gamma.vercel.app",
+    "https://gp-frontend-git-feature-ef5217-atheeraladwan371-7653s-projects.vercel.app",
+    "https://gp-frontend-git-feature-44801a-atheeraladwan371-7653s-projects.vercel.app",
+    " http://localhost:5173/",
 
     ],
     allow_credentials=True,
