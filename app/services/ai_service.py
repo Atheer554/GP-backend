@@ -1,6 +1,6 @@
 import requests
 
-AI_API_URL = "gp-2026-production-5f0f.up.railway.app"
+AI_API_URL = "https://gp-2026-production-5f0f.up.railway.app"
 
 
 def send_image_to_ai(file_name: str, file_bytes: bytes, content_type: str):
